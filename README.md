@@ -1,0 +1,2 @@
+# scoin
+cryptocurrency
