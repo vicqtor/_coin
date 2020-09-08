@@ -3,7 +3,7 @@ import requests
 import notify2
 from bs4 import BeautifulSoup
 
-with open('rates_src', 'r') as reader:
+with open('rates_src.json', 'r') as reader:
     cfg = reader.read()
 
 def getrates():
