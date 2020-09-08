@@ -68,14 +68,14 @@ class BlockChain:
         return True
     
     @staticmethod
-    def proofofwork(lastproof):#identifies no f(prev f; new proof)' such that hash(ff') contain 4 leading zeroes
+    def proofofwork(lastproof):
         proofno = 0
         while BlockChain.verifyingproof(proofno, lastproof) is False:
             proofno += 1
         return proofno
     
     @staticmethod
-    def verifyingproof(lastproof, proof):#verifying the proof: does hash(lastproof, proof) contain 4 leading zeroes?
+    def verifyingproof(lastproof, proof):
         guess = f'{lastproof}{proof}'.encode()
         guesshash = hashlib.sha256(guess).hexdigest()
         return guesshash[:4] == "0000"
@@ -84,7 +84,7 @@ class BlockChain:
     def latestblock(self):
         return self.chain[-1]
     
-    def blockmining(self, detailsminer): # 0 implies that this node has created a new block, q=1 creating a new block (or identifying the proof number) is awarded with 1
+    def blockmining(self, detailsminer):
         self.newdata(
             sender = "0",
             recipient = detailsminer,
@@ -101,7 +101,7 @@ class BlockChain:
         return True
     
     @staticmethod
-    def obtainblockobject(blockdata):#obtains block object from the block data
+    def obtainblockobject(blockdata):
         return Block(
             blockdata['index'],
             blockdata['proofno'],
