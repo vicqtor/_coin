@@ -3,8 +3,11 @@ import requests
 import notify2
 from bs4 import BeautifulSoup
 
+with open('', 'r') as reader:
+    cfg = reader.read()
+
 def getrates():
-    url = 'https://www.coingecko.com/en/price_charts/bitcoin/inr' # header = {'user-Agent': 'Mozilla/5.0'}
+    url = json.loads(cfg)['source']
     
     bitfile = requests.get(url)
     soup_object = BeautifulSoup(bitfile.text,'html.parser')
@@ -22,3 +25,8 @@ def getrates():
 rates = getrates()
 rates_set = ''
 rates_set = rates_set + rates[0] + ':' + rates[2].encode('utf-8') + '\n'
+
+notify2.init('rates update')
+notif = notify2.Notification('Rates', rates_set)
+notif.show()
+notif.set_timeout(10)
