@@ -3,18 +3,20 @@
     a digital currency | cryptocurrency
 </h4>    
 <hr>
-how to: blockchain
+how to:
+
+- blockchain
 
 ```python3
-python3 -m 
+python3 -m _coin
 ```
-mining
+- mining
 
 ```python3
-python3 -m miner
+python3 -m sc_miner
 ```
-rates source
+- rates source
 
 ```pyhton3
-python3 -m rates
+python3 -m cur_rates
 ```
