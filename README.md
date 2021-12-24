@@ -1,8 +1,7 @@
 <h4 align='center' blockchain
     <br>
     a digital cryptocurrency
-    a cryptocurrency is an example of a digital currency
-</h4>    
+</h4>
 <hr>
 how to:
 
