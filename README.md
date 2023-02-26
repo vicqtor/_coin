@@ -1,6 +1,6 @@
 <h4 align='center' blockchain
     <br>
-    a digital cryptocurrency
+    a digital currency
 </h4>
 <hr>
 how to:
